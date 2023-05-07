@@ -1,0 +1,209 @@
+.options {
+  border: 1px solid;
+  width: 10vw;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+.selected {
+  left: 50%;
+  bottom: 10%;
+  opacity: 1;
+  z-index: 4;
+  background-color: #fff;
+}
+
+.selected__moveUp {
+  animation: selected-moveUp 1s linear;
+}
+
+.selected__moveDown {
+  animation: selected-moveDown 1s linear;
+}
+
+.blur-top {
+  left: 52%;
+  bottom: 14%;
+  opacity: 0.15;
+  z-index: 3;
+  background-color: rgb(231, 231, 231);
+}
+
+.blurTop__moveUp {
+  animation: blurTop-moveUp 1s linear;
+}
+
+.blurTop__moveDown {
+  animation: blurTop-moveDown 1s linear;
+}
+
+.blur-bottom {
+  left: 52%;
+  bottom: 6%;
+  opacity: 0.15;
+  z-index: 2;
+  background-color: rgb(171, 171, 171);
+}
+
+.blurBottom__moveUp {
+  animation: blurBottom-moveUp 1s linear;
+}
+
+.blurBottom__moveDown {
+  animation: blurBottom-moveDown 1s linear;
+}
+
+.blur {
+  left: 54%;
+  bottom: 4%;
+  opacity: 0;
+  z-index: 1;
+  background-color: rgb(109, 109, 109);
+}
+
+.blur__moveUp {
+  animation: blur-moveUp 1s linear;
+}
+
+.blur__moveDown {
+  animation: blur-moveDown 1s linear;
+}
+
+@keyframes selected-moveUp {
+  0% {
+    opacity: 1;
+    bottom: 10%;
+    left: 50%;
+    z-index: 4;
+    background-color: #fff;
+  }
+  100% {
+    left: 52%;
+    bottom: 14%;
+    opacity: 0.15;
+    z-index: 3;
+    background-color: rgb(231, 231, 231);
+  }
+}
+
+@keyframes blurTop-moveUp {
+  0% {
+    left: 52%;
+    bottom: 14%;
+    opacity: 0.15;
+    z-index: 3;
+    background-color: rgb(231, 231, 231);
+  }
+  100% {
+    left: 54%;
+    bottom: 16%;
+    opacity: 0;
+    z-index: 1;
+    background-color: rgb(231, 231, 231);
+  }
+}
+
+@keyframes blurBottom-moveUp {
+  0% {
+    left: 52%;
+    bottom: 6%;
+    opacity: 0.15;
+    z-index: 2;
+    background-color: rgb(171, 171, 171);
+  }
+  100% {
+    left: 50%;
+    bottom: 10%;
+    opacity: 1;
+    z-index: 4;
+    background-color: #fff;
+  }
+}
+
+@keyframes blur-moveUp {
+  0% {
+    left: 54%;
+    bottom: 4%;
+    opacity: 0;
+    z-index: 1;
+    background-color: rgb(171, 171, 171);
+  }
+  100% {
+    left: 52%;
+    bottom: 6%;
+    opacity: 0.15;
+    z-index: 2;
+    background-color: rgb(171, 171, 171);
+  }
+}
+
+@keyframes selected-moveDown {
+  0% {
+    left: 50%;
+    bottom: 10%;
+    opacity: 1;
+    z-index: 4;
+    background-color: #fff;
+  }
+  100% {
+    left: 52%;
+    bottom: 6%;
+    opacity: 0.15;
+    z-index: 2;
+    background-color: rgb(171, 171, 171);
+  }
+}
+
+@keyframes blurTop-moveDown {
+  0% {
+    left: 52%;
+    bottom: 14%;
+    opacity: 0.15;
+    z-index: 3;
+    background-color: rgb(231, 231, 231);
+  }
+  100% {
+    left: 50%;
+    bottom: 10%;
+    opacity: 1;
+    z-index: 4;
+    background-color: #fff;
+  }
+}
+
+@keyframes blurBottom-moveDown {
+  0% {
+    left: 52%;
+    bottom: 6%;
+    opacity: 0.15;
+    z-index: 2;
+    background-color: rgb(171, 171, 171);
+  }
+  100% {
+    left: 54%;
+    bottom: 4%;
+    opacity: 0;
+    z-index: 1;
+    background-color: rgb(109, 109, 109);
+  }
+}
+
+@keyframes blur-moveDown {
+  0% {
+    left: 54%;
+    bottom: 16%;
+    opacity: 0;
+    z-index: 1;
+    background-color: rgb(231, 231, 231);
+  }
+  100% {
+    left: 52%;
+    bottom: 14%;
+    opacity: 0.15;
+    z-index: 3;
+    background-color: rgb(231, 231, 231);
+  }
+}
