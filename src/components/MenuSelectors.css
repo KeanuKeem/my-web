@@ -1,5 +1,6 @@
 .options {
   border: 1px solid;
+  border-radius: .4rem;
   width: 10vw;
   text-align: center;
   padding: 0.5rem 0;

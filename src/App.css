@@ -1,10 +1,92 @@
-.main-page {
+.App {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.view {
   width: 70vw;
   height: 70vh;
   border: 1px solid;
-  position: relative;
-  margin-top: 3%;
+  border-radius: 1rem;
+  position: absolute;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
+  z-index: 2;
   background-color: #fff;
+}
+
+.view-top {
+  width: 100%;
+  padding: .2rem 0;
+  background-color: rgb(209, 209, 209);
+}
+
+.view-top__logo-line {
+  margin-left: 1.5rem;
+  width: fit-content;
+  padding: .1rem .5rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.view-top__logo {
+  font-size: .9rem;
+}
+
+.view__welcome {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.appear {
+  animation: welcome-appear 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.disappear {
+  animation: welcome-disappear 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.view__welcome__spinner {
+  animation: loading-spin .8s linear infinite;
+}
+
+@keyframes welcome-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes welcome-disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
