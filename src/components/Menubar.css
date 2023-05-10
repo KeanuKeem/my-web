@@ -1,0 +1,48 @@
+.main-bottom {
+    width: 70%;
+    border: 1px solid;
+    border-radius: 1rem;
+    box-shadow: 5px 5px rgba(130, 130, 130, 0.088);
+    padding: .5rem;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    background-color: rgba(229, 229, 229, 0.218);
+    animation: bottom-showup .75s linear;
+    animation-fill-mode: forwards;
+}
+
+.main-bottom__icon,
+.main-bottom__fa-icon {
+    width: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.linkedin {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(97%) saturate(2102%) hue-rotate(182deg) brightness(95%) contrast(101%);
+}
+
+.main-bottom__fa-icon {
+    font-size: 2.5rem;
+}
+
+@keyframes bottom-showup {
+    0% {
+        opacity: 0;
+        bottom: -50%;
+        left: 50%;
+    }
+    100% {
+        opacity: 1;
+        bottom: 2%;
+        left: 50%;
+    }
+}

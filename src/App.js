@@ -37,7 +37,7 @@ function App() {
             />
           </div>
         )}
-        <Mainpage />
+        {!isWelcome && <Mainpage />}
       </div>
     </div>
   );
