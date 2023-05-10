@@ -17,6 +17,15 @@
     animation-fill-mode: forwards;
 }
 
+.main-bottom__unClick {
+    position: relative;
+}
+
+.main-bottom__click {
+    animation: icon-clicked 1.2s linear;
+    animation-fill-mode: forwards;
+}
+
 .main-bottom__icon,
 .main-bottom__fa-icon {
     width: 2.5rem;
@@ -44,5 +53,20 @@
         opacity: 1;
         bottom: 2%;
         left: 50%;
+    }
+}
+
+@keyframes icon-clicked {
+    20% {
+        transform: translate(0, 0);
+    }
+    60% {
+        transform: translate(0, -1.5rem);
+    }
+    70% {
+        transform: translate(0, -1.5rem);
+    }
+    100% {
+        
     }
 }

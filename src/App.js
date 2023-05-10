@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   const [isWelcome, setIsWelcome] = useState(true);
   const [welcomeClass, setWelcomeClass] = useState("view__welcome appear");
+  const [currentType, setCurrentType] = useState("home");
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,6 +28,7 @@ function App() {
           <div className="view-top__logo-line">
             <FontAwesomeIcon className="view-top__logo" icon={faK} />
           </div>
+          {currentType !== "home" && <p>{currentType}</p>}
         </div>
         {isWelcome && (
           <div className={welcomeClass}>
@@ -37,7 +39,7 @@ function App() {
             />
           </div>
         )}
-        {!isWelcome && <Mainpage />}
+        {!isWelcome && <Mainpage type={currentType} setType={setCurrentType} />}
       </div>
     </div>
   );
