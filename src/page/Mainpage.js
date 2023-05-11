@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import About from "../components/About";
 import Icon from "../components/Icon";
 import Menubar from "../components/Menubar";
 import GitHub from "../components/Github";
 import LinkedIn from "../components/LinkedIn";
+import ColourContext from "../store/ColourContext";
 
 import "./Mainpage.css";
 import "../components/FontColour.css";
@@ -15,6 +16,7 @@ const firstName = "Keonwoo Kim!";
 const secondLine = "The developer!";
 
 const Mainpage = (props) => {
+  const ctx = useContext(ColourContext);
   const [firstText, setFirstText] = useState("");
   const [firstNickName, setFirstNickName] = useState(false);
   const [firstActual, setFirstActual] = useState(false);
@@ -69,16 +71,6 @@ const Mainpage = (props) => {
   useEffect(() => {
     if (firstText.length === 21 && firstActual) {
       setFirstActualDone(true);
-      setFirstText(
-        <>
-          <span className="tag">Hi</span>
-          <span>! </span>
-          <span className="attribute">I am </span>
-          <span className="value">Keonwoo </span>
-          <span className="value">Kim</span>
-          <span>!</span>
-        </>
-      );
       setTimeout(() => {
         setFirstLineDone(true);
       }, 2000);
@@ -98,9 +90,57 @@ const Mainpage = (props) => {
     }
   }, [secondIndex]);
 
+  useEffect(() => {
+    if (firstActualDone) {
+      setFirstText(
+        <>
+          <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
+            Hi
+          </span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            !{" "}
+          </span>
+          <span
+            className={
+              ctx.colourMode === "light" ? "attribute" : "attribute-dark"
+            }
+          >
+            I am{" "}
+          </span>
+          <span className={ctx.colourMode === "light" ? "value" : "value-dark"}>
+            {"Keonwoo Kim"}
+          </span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            !
+          </span>
+        </>
+      );
+    }
+  }, [ctx.colourMode, firstActualDone]);
+
+  useEffect(() => {
+    if (secondLineDone) {
+      setSecondText(
+        <>
+          <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
+            The{" "}
+          </span>
+          <span
+            className={
+              ctx.colourMode === "light" ? "attribute" : "attribute-dark"
+            }
+          >
+            developer
+          </span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>!</span>
+        </>
+      );
+    }
+  }, [ctx.colourMode, secondLineDone]);
+
   return (
-    <div className="main">
-      {props.type !== "about-me" && (
+    <div className={ctx.colourMode === "light" ? "main" : "main-dark"}>
+      {props.type !== "About-me" && (
         <div className="main-top">
           <div className="main-top__icon">
             <Icon className="main-top__icon__left" name="village.js">
@@ -117,15 +157,47 @@ const Mainpage = (props) => {
             {props.type === "home" && (
               <>
                 <h1>
-                  <span className="main-top__message">{firstText}</span>
+                  <span
+                    className={
+                      ctx.colourMode === "dark" && !firstActualDone
+                        ? "main-top__message-dark"
+                        : "main-top__message"
+                    }
+                  >
+                    {firstText}
+                  </span>
                   {!firstActualDone && (
-                    <span className="main-top__text__cursor">|</span>
+                    <span
+                      className={
+                        ctx.colourMode === "light"
+                          ? "main-top__text__cursor"
+                          : "main-top__text__cursor-dark"
+                      }
+                    >
+                      |
+                    </span>
                   )}
                 </h1>
                 <h1 className="main-top__text__first">
-                  <span className="main-top__message">{secondText}</span>
+                  <span
+                    className={
+                      ctx.colourMode === "dark" && !secondLineDone
+                        ? "main-top__message-dark"
+                        : "main-top__message"
+                    }
+                  >
+                    {secondText}
+                  </span>
                   {firstActualDone && (
-                    <span className="main-top__text__cursor">|</span>
+                    <span
+                      className={
+                        ctx.colourMode === "light"
+                          ? "main-top__text__cursor"
+                          : "main-top__text__cursor-dark"
+                      }
+                    >
+                      |
+                    </span>
                   )}
                 </h1>
               </>
@@ -133,7 +205,7 @@ const Mainpage = (props) => {
           </div>
         </div>
       )}
-      {props.type === "about-me" && <About />}
+      {props.type === "About-me" && <About />}
       {secondLineDone && <Menubar setType={props.setType} />}
     </div>
   );

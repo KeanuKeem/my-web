@@ -1,62 +1,89 @@
+.about,
+.about-dark {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  height: 52vh;
+}
+
 .about {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1rem;
-    border: 1px solid;
-    height: 52vh;
+  border-bottom: 1px solid;
+}
+.about-dark {
+  border-bottom: 1px solid #fff;
 }
 
 .about__title {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: .5rem;
-    margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.about__title__items,
+.about__title__items-dark {
+  width: 100%;
+  text-align: center;
+  padding: 0.2rem;
+  animation: show-about-menus 0.5s linear;
 }
 
 .about__title__items {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid;
-    padding: .2rem;
-    animation: show-about-menus .5s linear;
+  border-bottom: 1px solid;
+}
+.about__title__items-dark {
+  border-bottom: 1px solid #fff;
 }
 
 .about__title__items span {
-    cursor: default;
+  cursor: default;
 }
 
 .selected {
-    border: 1px solid rgba(132, 223, 76, 0.61);;
-    border-radius: .3rem;
-    background-color: rgba(132, 223, 76, 0.61);
+  border: 1px solid rgba(132, 223, 76, 0.61);
+  border-radius: 0.3rem;
+  background-color: rgba(132, 223, 76, 0.61);
+}
+.selected-dark {
+  border: 1px solid rgb(230, 121, 19);
+  border-radius: 0.3rem;
+  background-color: rgb(230, 121, 19);
 }
 
 .about__text {
-    border-left: 1px solid;
+  border-left: 1px solid;
+}
+.about__text-dark {
+  border-left: 1px solid #fff;
 }
 
-.about__text__items {
-    padding: 1rem 1rem 1rem 3rem;
-    animation: show-about-text .8s linear;
+.about__text__items,
+.about__text__items-dark {
+  padding: 1rem 1rem 1rem 3rem;
+  animation: show-about-text 0.8s linear;
+}
+
+.about__text__items-dark > * {
+  color: #fff;
 }
 
 @keyframes show-about-text {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes show-about-menus {
-    0% {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import ColourContext from "../store/ColourContext";
 
 import "./Icon.css";
+import "./FontColour.css";
 
 const Icon = (props) => {
+  const ctx = useContext(ColourContext);
   const [showDesc, setShowDesc] = useState(false);
 
   if (props.type === "bottom") {
@@ -18,7 +22,13 @@ const Icon = (props) => {
             setShowDesc(false);
           }}
         >
-          <div className="icon__inner">{props.children}</div>
+          <div
+            className={
+              ctx.colourMode === "light" ? "icon__inner" : "icon__inner-dark"
+            }
+          >
+            {props.children}
+          </div>
           {showDesc && <p className="icon__desc">{props.name}</p>}
         </div>
       </>
@@ -27,7 +37,11 @@ const Icon = (props) => {
     return (
       <div className={props.className} onClick={props.onClick}>
         <div className="icon__inner">{props.children}</div>
-        <p className="icon__name">{props.name}</p>
+        <p className="icon__name">
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            {props.name}
+          </span>
+        </p>
       </div>
     );
   }

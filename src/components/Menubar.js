@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboardList, faIdCard } from "@fortawesome/free-solid-svg-icons";
 
 import Icon from "./Icon";
 
+import ColourContext from "../store/ColourContext";
+
 import "./Menubar.css";
 import gitHub from "../img/github.svg";
 import linkedin from "../img/linkedin.svg";
 
 const Menubar = (props) => {
+  const ctx = useContext(ColourContext);
   const [linkedInClass, setLinkedInClass] = useState("main-bottom__unClick");
   const [githubClass, setGithubClass] = useState("main-bottom__unClick");
   const [aboutClass, setAboutClass] = useState("main-bottom__unClick");
@@ -37,12 +40,16 @@ const Menubar = (props) => {
     setTimeout(() => {
       setLinkedInClass("main-bottom__unClick");
       setGithubClass("main-bottom__unClick");
-      props.setType("about-me");
+      props.setType("About-me");
     }, 1200);
   };
 
   return (
-    <div className="main-bottom">
+    <div
+      className={
+        ctx.colourMode === "light" ? "main-bottom" : "main-bottom-dark"
+      }
+    >
       <Icon
         type="bottom"
         className={linkedInClass}
@@ -69,7 +76,10 @@ const Menubar = (props) => {
         onClick={aboutClickHandler}
         name="About-Me.js"
       >
-        <FontAwesomeIcon className="main-bottom__profile-icon" icon={faIdCard} />
+        <FontAwesomeIcon
+          className="main-bottom__profile-icon"
+          icon={faIdCard}
+        />
       </Icon>
       <Icon
         className="main-bottom__unClick"

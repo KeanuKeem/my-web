@@ -1,9 +1,16 @@
-.main {
+.main,
+.main-dark {
   width: 100%;
   height: 100vh;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
+}
+
+.main {
+  background-color: #fff;
+}
+.main-dark {
+  background-color: rgb(29, 29, 29);
 }
 
 .main-top {
@@ -25,18 +32,27 @@
   height: 5rem;
 }
 
-.main-top__message {
+.main-top__message,
+.main-top__message-dark {
   font-family: "Source Code Pro", monospace;
   font-weight: bold;
   font-size: 2rem;
+}
+
+.main-top__message-dark {
+  color: #fff;
 }
 
 .main-top__text {
   margin-top: 2rem;
 }
 
-.main-top__text__cursor {
+.main-top__text__cursor,
+.main-top__text__cursor-dark {
   animation: cursor-blink 1s step-end infinite;
+}
+.main-top__text__cursor-dark {
+  color: #fff;
 }
 
 .main-top__text__first {

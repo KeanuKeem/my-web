@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import ColourContext from "../store/ColourContext";
 
 import "./FontColour.css";
 
 const githubLine = "You will be redirected to my GitHub page :)";
 
 const GitHub = () => {
+  const ctx = useContext(ColourContext);
   const [githubText, setGithubText] = useState("");
   const [githubIndex, setGithubIndex] = useState(0);
   const [githubDone, setGithubDone] = useState(false);
+  const [githubSent, setGithubSent] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {}, 1000);
@@ -23,29 +27,60 @@ const GitHub = () => {
     if (githubIndex === githubLine.length) {
       setGithubText(
         <>
-          <span className="tag">You </span>
-          <span className="attribute">will be </span>
-          <span>redirected to my </span>
-          <span className="value">GitHub page{" "}</span>
-          <span>{":)"}</span>
+          <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
+            You{" "}
+          </span>
+          <span
+            className={
+              ctx.colourMode === "light" ? "attribute" : "attribute-dark"
+            }
+          >
+            will be{" "}
+          </span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            redirected to my{" "}
+          </span>
+          <span className={ctx.colourMode === "light" ? "value" : "value-dark"}>
+            GitHub page{" "}
+          </span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            {":)"}
+          </span>
         </>
       );
       setGithubDone(true);
     }
-  }, [githubIndex]);
+  }, [ctx.colourMode, githubIndex]);
 
   useEffect(() => {
-    if (githubDone) {
+    if (githubDone && !githubSent) {
       setTimeout(() => {
         window.open("https://github.com/KeanuKeem", "_blank");
+        setGithubSent(true);
       }, 2000);
     }
-  }, [githubDone]);
+  }, [githubDone, githubSent]);
 
   return (
     <h1>
-      <span>{githubText}</span>
-      <span className="main-top__text__cursor">|</span>
+      <span
+        className={
+          ctx.colourMode === "dark"
+            ? "main-top__message-dark"
+            : "main-top__message"
+        }
+      >
+        {githubText}
+      </span>
+      <span
+        className={
+          ctx.colourMode === "light"
+            ? "main-top__text__cursor"
+            : "main-top__text__cursor-dark"
+        }
+      >
+        |
+      </span>
     </h1>
   );
 };

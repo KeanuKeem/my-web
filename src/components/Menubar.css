@@ -1,78 +1,85 @@
+.main-bottom,
+.main-bottom-dark {
+  width: 70%;
+  border: 1px solid;
+  border-radius: 1rem;
+  box-shadow: 5px 5px rgba(130, 130, 130, 0.088);
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  animation: bottom-showup 0.75s linear;
+  animation-fill-mode: forwards;
+}
+
 .main-bottom {
-    width: 70%;
-    border: 1px solid;
-    border-radius: 1rem;
-    box-shadow: 5px 5px rgba(130, 130, 130, 0.088);
-    padding: .5rem;
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
-    background-color: rgb(255, 232, 232);
-    animation: bottom-showup .75s linear;
-    animation-fill-mode: forwards;
+  background-color: rgb(255, 232, 232);
+}
+.main-bottom-dark {
+  background-color: rgb(49, 49, 49);
 }
 
 .main-bottom__unClick {
-    position: relative;
+  position: relative;
 }
 
 .main-bottom__click {
-    animation: icon-clicked 1.2s linear;
-    animation-fill-mode: forwards;
+  animation: icon-clicked 1.2s linear;
+  animation-fill-mode: forwards;
 }
 
 .main-bottom__icon,
 .main-bottom__fa-icon,
 .main-bottom__profile-icon {
-    width: 2.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .linkedin {
-    filter: brightness(0) saturate(100%) invert(24%) sepia(97%) saturate(2102%) hue-rotate(182deg) brightness(95%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(24%) sepia(97%) saturate(2102%)
+    hue-rotate(182deg) brightness(95%) contrast(101%);
 }
 
 .main-bottom__fa-icon,
 .main-bottom__profile-icon {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .main-bottom__profile-icon {
-    color: rgb(129, 129, 129);
+  color: rgb(129, 129, 129);
 }
 
 @keyframes bottom-showup {
-    0% {
-        opacity: 0;
-        bottom: -50%;
-        left: 50%;
-    }
-    100% {
-        opacity: 1;
-        bottom: 2%;
-        left: 50%;
-    }
+  0% {
+    opacity: 0;
+    bottom: -50%;
+    left: 50%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 2%;
+    left: 50%;
+  }
 }
 
 @keyframes icon-clicked {
-    20% {
-        transform: translate(0, 0);
-    }
-    60% {
-        transform: translate(0, -1.5rem);
-    }
-    70% {
-        transform: translate(0, -1.5rem);
-    }
-    100% {
-        
-    }
+  20% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(0, -1.5rem);
+  }
+  70% {
+    transform: translate(0, -1.5rem);
+  }
+  100% {
+  }
 }

@@ -1,11 +1,29 @@
 .tag {
   color: #0024fc;
 }
+.tag-dark {
+  color: #976b98;
+}
 
 .attribute {
   color: #000;
 }
+.attribute-dark {
+  color: #9ad6fd
+}
 
 .value {
   color: #8f2115;
+}
+.value-dark {
+  color: #a97862;
+}
+
+.font {
+  color: #000;
+  cursor: default;
+}
+.font-dark {
+  color: #fff;
+  cursor: default;
 }

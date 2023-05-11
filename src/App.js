@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faK, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+  faK,
+  faSpinner,
+  faSun,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 
+import ColourContext from "./store/ColourContext";
 import Mainpage from "./page/Mainpage";
 
 import "./App.css";
+import "./components/FontColour.css";
 
 function App() {
   const [isWelcome, setIsWelcome] = useState(true);
   const [welcomeClass, setWelcomeClass] = useState("view__welcome appear");
   const [currentType, setCurrentType] = useState("home");
+  const [colourMode, setColourMode] = useState("light");
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,26 +30,77 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div className="view">
-        <div className="view-top">
-          <div className="view-top__logo-line">
-            <FontAwesomeIcon className="view-top__logo" icon={faK} />
+    <ColourContext.Provider value={{ colourMode }}>
+      <div className="App">
+        <div className={colourMode === "light" ? "view" : "view-dark"}>
+          <div
+            className={colourMode === "light" ? "view-top" : "view-top-dark"}
+          >
+            <div className="view-top__logo-line">
+              <FontAwesomeIcon className="view-top__logo" icon={faK} />
+            </div>
+            <div
+              className={
+                colourMode === "light"
+                  ? "view-top__mode__light-active"
+                  : "view-top__mode__light"
+              }
+              onClick={() => {
+                setColourMode("light");
+              }}
+            >
+              <FontAwesomeIcon
+                className={
+                  colourMode === "light"
+                    ? "view-top__light-active"
+                    : "view-top__light"
+                }
+                icon={faSun}
+              />
+            </div>
+            <div
+              className={
+                colourMode === "light"
+                  ? "view-top__mode__dark"
+                  : "view-top__mode__dark-active"
+              }
+              onClick={() => {
+                setColourMode("dark");
+              }}
+            >
+              <FontAwesomeIcon className="view-top__dark" icon={faMoon} />
+            </div>
+            {currentType !== "home" && (
+              <p>
+                <span className={colourMode === "light" ? "font" : "font-dark"}>
+                  {currentType}
+                </span>
+              </p>
+            )}
           </div>
-          {currentType !== "home" && <p>{currentType}</p>}
+          {isWelcome && (
+            <div className={welcomeClass}>
+              <h2 className="view__welcome__heading">
+                <span className={colourMode === "light" ? "font" : "font-dark"}>
+                  Welcome!
+                </span>
+              </h2>
+              <FontAwesomeIcon
+                className={
+                  colourMode === "light"
+                    ? "view__welcome__spinner"
+                    : "view__welcome__spinner-dark"
+                }
+                icon={faSpinner}
+              />
+            </div>
+          )}
+          {!isWelcome && (
+            <Mainpage type={currentType} setType={setCurrentType} />
+          )}
         </div>
-        {isWelcome && (
-          <div className={welcomeClass}>
-            <h2 className="view__welcome__heading">Welcome!</h2>
-            <FontAwesomeIcon
-              className="view__welcome__spinner"
-              icon={faSpinner}
-            />
-          </div>
-        )}
-        {!isWelcome && <Mainpage type={currentType} setType={setCurrentType} />}
       </div>
-    </div>
+    </ColourContext.Provider>
   );
 }
 

@@ -1,4 +1,5 @@
-.icon__inner {
+.icon__inner,
+.icon__inner-dark {
   border: 1px solid;
   border-radius: 0.5rem;
   width: 3rem;
@@ -6,7 +7,13 @@
   overflow: hidden;
   position: relative;
   margin: 0 auto;
+}
+
+.icon__inner {
   background-color: #fff;
+}
+.icon__inner-dark {
+  background-color: rgb(227, 227, 227);
 }
 
 .icon__desc {
