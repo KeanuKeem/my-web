@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList, faIdCard } from "@fortawesome/free-solid-svg-icons";
 
 import Icon from "./Icon";
 
@@ -12,13 +12,13 @@ import linkedin from "../img/linkedin.svg";
 const Menubar = (props) => {
   const [linkedInClass, setLinkedInClass] = useState("main-bottom__unClick");
   const [githubClass, setGithubClass] = useState("main-bottom__unClick");
+  const [aboutClass, setAboutClass] = useState("main-bottom__unClick");
 
   const linkedInClickHandler = () => {
     setLinkedInClass("main-bottom__click");
     setTimeout(() => {
-      setGithubClass("");
-      props.setGithubText("");
-      props.setGithubIndex(0);
+      setGithubClass("main-bottom__unClick");
+      setAboutClass("main-bottom__unClick");
       props.setType("LinkedIn");
     }, 1200);
   };
@@ -26,10 +26,18 @@ const Menubar = (props) => {
   const githubClickHandler = () => {
     setGithubClass("main-bottom__click");
     setTimeout(() => {
-      setLinkedInClass("");
-      props.setLinkedInText("");
-      props.setLinkedInIndex(0);
+      setLinkedInClass("main-bottom__unClick");
+      setAboutClass("main-bottom__unClick");
       props.setType("GitHub");
+    }, 1200);
+  };
+
+  const aboutClickHandler = () => {
+    setAboutClass("main-bottom__click");
+    setTimeout(() => {
+      setLinkedInClass("main-bottom__unClick");
+      setGithubClass("main-bottom__unClick");
+      props.setType("about-me");
     }, 1200);
   };
 
@@ -54,6 +62,14 @@ const Menubar = (props) => {
         name="Github.js"
       >
         <img className="main-bottom__icon" src={gitHub} alt="github" />
+      </Icon>
+      <Icon
+        className={aboutClass}
+        type="bottom"
+        onClick={aboutClickHandler}
+        name="About-Me.js"
+      >
+        <FontAwesomeIcon className="main-bottom__profile-icon" icon={faIdCard} />
       </Icon>
       <Icon
         className="main-bottom__unClick"

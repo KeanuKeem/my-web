@@ -18,7 +18,8 @@
   top: -4rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(229, 229, 229, 0.218);
+  z-index: 3;
+  background-color: rgb(255, 232, 232);
 }
 
 .icon__name {
@@ -26,4 +27,5 @@
   margin: 0;
   padding-top: 0.2rem;
   text-align: center;
+  text-decoration: line-through;
 }

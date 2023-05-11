@@ -32,7 +32,7 @@ function App() {
         </div>
         {isWelcome && (
           <div className={welcomeClass}>
-            <h2>Welcome!</h2>
+            <h2 className="view__welcome__heading">Welcome!</h2>
             <FontAwesomeIcon
               className="view__welcome__spinner"
               icon={faSpinner}

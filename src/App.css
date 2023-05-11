@@ -69,6 +69,11 @@
   animation-fill-mode: forwards;
 }
 
+.view__welcome__heading {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+}
+
 .view__welcome__spinner {
   animation: loading-spin .8s linear infinite;
 }
