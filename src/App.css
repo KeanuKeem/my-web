@@ -101,7 +101,6 @@
   font-size: 0.9rem;
 }
 
-
 .view-top__light {
   color: rgb(77, 255, 0);
 }
@@ -172,5 +171,23 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .view,
+  .view-dark {
+    width: 95vw;
+    height: 95vh;
+    top: 2.5vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .view,
+  .view-dark {
+    width: 95vw;
+    height: 95vh;
+    top: 2.5vh;
   }
 }

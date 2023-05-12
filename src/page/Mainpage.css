@@ -64,3 +64,25 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .main-top__text {
+    margin-top: 0;
+  }
+  .main-top__text h1 > * {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .main-top__text {
+    margin-top: 0;
+  }
+  .main-top__text h1 > * {
+    font-size: 1.6rem;
+  }
+}
