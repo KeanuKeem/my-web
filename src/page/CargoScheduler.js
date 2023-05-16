@@ -68,6 +68,7 @@ const CargoScheduler = () => {
                 able to see the functional guide.
               </p>
               <p>When clicked!</p>
+              <p>You may click the link above to view the completed project!</p>
             </div>
           )}
         </div>
