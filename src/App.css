@@ -12,6 +12,7 @@
   height: 70vh;
   border: 1px solid;
   border-radius: 1rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.184);
   position: absolute;
   top: 5%;
   left: 50%;

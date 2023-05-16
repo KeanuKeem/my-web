@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #edeef7;
+  width: 30%;
+  height: inherit;
+  cursor: pointer;
+}
+
+.sidebar__cont {
+    margin-top: 1rem;
+}
+
+.sidebar p {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.sidebar p >:first-child,
+.sidebar p >:last-child {
+  font-size: .75rem;
+}
+
+.sidebar__list p {
+    font-size: .9rem;
+    margin-top: .5rem;
+}

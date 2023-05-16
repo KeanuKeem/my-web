@@ -16,12 +16,16 @@ const Menubar = (props) => {
   const [linkedInClass, setLinkedInClass] = useState("main-bottom__unClick");
   const [githubClass, setGithubClass] = useState("main-bottom__unClick");
   const [aboutClass, setAboutClass] = useState("main-bottom__unClick");
+  const [cargoSchedulerClass, setCargoSchedulerClass] = useState(
+    "main-bottom__unClick"
+  );
 
   const linkedInClickHandler = () => {
     setLinkedInClass("main-bottom__click");
     setTimeout(() => {
       setGithubClass("main-bottom__unClick");
       setAboutClass("main-bottom__unClick");
+      setCargoSchedulerClass("main-bottom__unClick");
       props.setType("LinkedIn");
     }, 1200);
   };
@@ -31,6 +35,7 @@ const Menubar = (props) => {
     setTimeout(() => {
       setLinkedInClass("main-bottom__unClick");
       setAboutClass("main-bottom__unClick");
+      setCargoSchedulerClass("main-bottom__unClick");
       props.setType("GitHub");
     }, 1200);
   };
@@ -40,7 +45,18 @@ const Menubar = (props) => {
     setTimeout(() => {
       setLinkedInClass("main-bottom__unClick");
       setGithubClass("main-bottom__unClick");
+      setCargoSchedulerClass("main-bottom__unClick");
       props.setType("About-me");
+    }, 1200);
+  };
+
+  const cargoSchedulerClickHandler = () => {
+    setCargoSchedulerClass("main-bottom__click");
+    setTimeout(() => {
+      setLinkedInClass("main-bottom__unClick");
+      setGithubClass("main-bottom__unClick");
+      setAboutClass("main-bottom__unClick");
+      props.setType("CargoScheduler");
     }, 1200);
   };
 
@@ -82,8 +98,9 @@ const Menubar = (props) => {
         />
       </Icon>
       <Icon
-        className="main-bottom__unClick"
+        className={cargoSchedulerClass}
         type="bottom"
+        onClick={cargoSchedulerClickHandler}
         name="Cargo-Scheduler.js"
       >
         <FontAwesomeIcon

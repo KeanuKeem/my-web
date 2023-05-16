@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 
-import About from "../components/About";
+import About from "./About";
 import Icon from "../components/Icon";
 import Menubar from "../components/Menubar";
 import GitHub from "../components/Github";
 import LinkedIn from "../components/LinkedIn";
+import CargoScheduler from "./CargoScheduler";
+
 import ColourContext from "../store/ColourContext";
 
 import "./Mainpage.css";
@@ -132,7 +134,9 @@ const Mainpage = (props) => {
           >
             developer
           </span>
-          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>!</span>
+          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+            !
+          </span>
         </>
       );
     }
@@ -140,7 +144,7 @@ const Mainpage = (props) => {
 
   return (
     <div className={ctx.colourMode === "light" ? "main" : "main-dark"}>
-      {props.type !== "About-me" && (
+      {props.type !== "About-me" && props.type !== "CargoScheduler" && (
         <div className="main-top">
           <div className="main-top__icon">
             <Icon className="main-top__icon__left" name="village.js">
@@ -154,6 +158,7 @@ const Mainpage = (props) => {
           <div className="main-top__text">
             {props.type === "LinkedIn" && <LinkedIn />}
             {props.type === "GitHub" && <GitHub />}
+
             {props.type === "home" && (
               <>
                 <h1>
@@ -206,6 +211,7 @@ const Mainpage = (props) => {
         </div>
       )}
       {props.type === "About-me" && <About />}
+      {props.type === "CargoScheduler" && <CargoScheduler />}
       {secondLineDone && <Menubar setType={props.setType} />}
     </div>
   );

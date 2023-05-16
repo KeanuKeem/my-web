@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import ColourContext from "../store/ColourContext";
 
 import "./About.css";
-import "./FontColour.css";
+import "../components/FontColour.css";
 
 const About = () => {
   const ctx = useContext(ColourContext);

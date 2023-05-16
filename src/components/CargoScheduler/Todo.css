@@ -1,0 +1,104 @@
+.todo-selector {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-dropdown {
+  background-color: #edeef7;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 1rem;
+  padding: 0.2rem;
+  position: relative;
+  width: 5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.259);
+}
+
+.todo-dropdown > :first-child {
+  font-size: 0.9rem;
+  left: 40%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.todo-dropdown > :last-child {
+  position: absolute;
+  right: 15%;
+  top: 15%;
+}
+
+.todo-date {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.275);
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.todo-add {
+  background-color: #d1ddff;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.275);
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  height: 1.8rem;
+}
+
+.todo-lists {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.todo-list {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.275);
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  text-align: center;
+  width: 8rem;
+  height: 25vh;
+}
+
+.list-fak {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-fak > :last-child {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.todo-list h2 {
+  margin: 0;
+}
+
+.todo-list hr {
+  width: 100%;
+  border-top: 1px solid;
+  margin-bottom: 0.5rem;
+}
+
+.todo-list p {
+  background-color: #000;
+  border: 4px solid #fff;
+  border-radius: 0.6rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+}

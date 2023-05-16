@@ -1,0 +1,43 @@
+.selector {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 .5rem;
+  margin-bottom: 2rem;
+}
+
+.dropdown {
+  background-color: #edeef7;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.259);
+  cursor: pointer;
+  height: 1rem;
+  padding: 0.2rem;
+  position: relative;
+  width: 6rem;
+}
+
+.dropdown > :first-child {
+  font-size: 0.9rem;
+  left: 30%;
+  position: absolute;
+  top: -0.5rem;
+}
+
+.dropdown > :last-child {
+  position: absolute;
+  right: 15%;
+  top: 15%;
+}
+
+.button {
+  background-color: #d1ddff;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.275);
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+}
