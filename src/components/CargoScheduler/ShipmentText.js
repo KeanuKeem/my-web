@@ -1,8 +1,16 @@
+import { useContext } from "react";
+
+import ColourContext from "../../store/ColourContext";
+
+import "../FontColour.css";
+
 const ShipmentText = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <>
       {props.focus === "shipment-star" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Favourite Shipment</h3>
           <p>
             User can add current shipment into their favourites array after it
@@ -11,7 +19,7 @@ const ShipmentText = (props) => {
         </li>
       )}
       {props.focus === "shipment-check" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Shipment Check-boxes</h3>
           <p>User can change current state of handing shipment.</p>
           <p>
@@ -21,14 +29,14 @@ const ShipmentText = (props) => {
         </li>
       )}
       {props.focus === "shipment-save" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Save current Shipment state</h3>
           <p>User can save current data.</p>
           <p>This button only shows up when there is any change.</p>
         </li>
       )}
       {props.focus === "shipment-add" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>FAK shipment add button</h3>
           <p>User can add LCL shipment inside FAK shipment.</p>
           <p>Added shipment will be appeard in the checklist box only.</p>
@@ -36,7 +44,7 @@ const ShipmentText = (props) => {
         </li>
       )}
       {props.focus === "shipment-checklist" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Checklist State</h3>
           <p>User can change each handling steps state.</p>
           <p>
@@ -46,14 +54,14 @@ const ShipmentText = (props) => {
         </li>
       )}
       {props.focus === "shipment-edit" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Edit Button</h3>
           <p>User can edit current shipment datas:</p>
           <p>Shipment details, as well as the checklist handling steps.</p>
         </li>
       )}
       {props.focus === "shipment-delete" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Delete Button</h3>
           <p>User can delete current shipment data.</p>
           <p>New pop up will appear for user to re-confirm.</p>

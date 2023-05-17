@@ -21,6 +21,7 @@ import ShipmentText from "../components/CargoScheduler/ShipmentText";
 import ColourContext from "../store/ColourContext";
 
 import "./CargoScheduler.css";
+import "../components/FontColour.css";
 
 const CargoScheduler = () => {
   const ctx = useContext(ColourContext);
@@ -29,8 +30,16 @@ const CargoScheduler = () => {
 
   return (
     <div className={ctx.colourMode === "light" ? "cs" : "cs-dark"}>
-      <div className="cs__view">
-        <div className="cs__view__top-bar">
+      <div
+        className={ctx.colourMode === "light" ? "cs__view" : "cs__view-dark"}
+      >
+        <div
+          className={
+            ctx.colourMode === "light"
+              ? "cs__view__top-bar"
+              : "cs__view__top-bar-dark"
+          }
+        >
           <FontAwesomeIcon
             className="cs__view__top-bar__exit"
             onClick={() => {
@@ -61,20 +70,34 @@ const CargoScheduler = () => {
           )}
           {display === "home" && (
             <div className="cs__view-home">
-              <h3>This is a general guide on my project.</h3>
-              <p>
+              <h3 className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+                This is a general guide on my project.
+              </h3>
+              <p className={ctx.colourMode === "light" ? "font" : "font-dark"}>
                 You can navigate through and once mouse pointer changes to{" "}
-                <FontAwesomeIcon icon={faHandPointer} />, you will be
-                able to see the functional guide.
+                <FontAwesomeIcon icon={faHandPointer} />, you will be able to
+                see the functional guide.
               </p>
-              <p>When clicked!</p>
-              <p>You may click the link above to view the completed project!</p>
+              <p className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+                When clicked!
+              </p>
+              <p className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+                You may click the link above to view the completed project!
+              </p>
             </div>
           )}
         </div>
       </div>
-      <div className="cs__desc">
-        <div className="cs__desc__top-bar">
+      <div
+        className={ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"}
+      >
+        <div
+          className={
+            ctx.colourMode === "light"
+              ? "cs__desc__top-bar"
+              : "cs__desc__top-bar-dark"
+          }
+        >
           <FontAwesomeIcon
             className="cs__view__top-bar__exit"
             onClick={() => {
@@ -97,7 +120,14 @@ const CargoScheduler = () => {
           {display === "navbar" && (
             <>
               <ul>
-                <li className={display === "navbar" && "selected"}>Navbar</li>
+                <li
+                  className={
+                    display === "navbar" &&
+                    (ctx.colourMode === "light" ? "selected" : "selected-dark")
+                  }
+                >
+                  Navbar
+                </li>
                 <NavbarText focus={focus} />
               </ul>
             </>
@@ -105,7 +135,14 @@ const CargoScheduler = () => {
           {display === "sidebar" && (
             <>
               <ul>
-                <li className={display === "sidebar" && "selected"}>Sidebar</li>
+                <li
+                  className={
+                    display === "sidebar" &&
+                    (ctx.colourMode === "light" ? "selected" : "selected-dark")
+                  }
+                >
+                  Sidebar
+                </li>
                 <SidebarText focus={focus} />
               </ul>
             </>
@@ -113,7 +150,12 @@ const CargoScheduler = () => {
           {display === "calendar" && (
             <>
               <ul>
-                <li className={display === "calendar" && "selected"}>
+                <li
+                  className={
+                    display === "calendar" &&
+                    (ctx.colourMode === "light" ? "selected" : "selected-dark")
+                  }
+                >
                   Calendar View
                 </li>
                 <CalendarText focus={focus} />
@@ -123,7 +165,12 @@ const CargoScheduler = () => {
           {display === "todo" && (
             <>
               <ul>
-                <li className={display === "todo" && "selected"}>
+                <li
+                  className={
+                    display === "todo" &&
+                    (ctx.colourMode === "light" ? "selected" : "selected-dark")
+                  }
+                >
                   To Do List View
                 </li>
                 <TodoText focus={focus} />
@@ -133,7 +180,12 @@ const CargoScheduler = () => {
           {display === "shipment" && (
             <>
               <ul>
-                <li className={display === "shipment" && "selected"}>
+                <li
+                  className={
+                    display === "shipment" &&
+                    (ctx.colourMode === "light" ? "selected" : "selected-dark")
+                  }
+                >
                   Shipment View
                 </li>
                 <ShipmentText focus={focus} />
@@ -143,6 +195,7 @@ const CargoScheduler = () => {
           {display === "home" && (
             <ul>
               <li
+                className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("navbar");
                 }}
@@ -150,6 +203,7 @@ const CargoScheduler = () => {
                 Navbar
               </li>
               <li
+                className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("sidebar");
                 }}
@@ -157,6 +211,7 @@ const CargoScheduler = () => {
                 Sidebar
               </li>
               <li
+                className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("calendar");
                 }}
@@ -164,6 +219,7 @@ const CargoScheduler = () => {
                 Calendar View
               </li>
               <li
+                className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("todo");
                 }}
@@ -171,6 +227,7 @@ const CargoScheduler = () => {
                 To Do List View
               </li>
               <li
+                className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("shipment");
                 }}

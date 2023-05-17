@@ -8,7 +8,9 @@
   gap: 1rem;
   align-items: center;
   border-bottom: 1px solid;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  background-color: #fff;
 }
 
 .shipment-star {
@@ -36,8 +38,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-  padding: 0 0.5rem;
+  padding: 1rem;
   align-items: center;
+}
+
+.shipment-bottom {
+  background-color: #fff;
 }
 
 .shipment-left {

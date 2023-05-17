@@ -1,8 +1,16 @@
+import { useContext } from "react";
+
+import ColourContext from "../../store/ColourContext";
+
+import "../FontColour.css";
+
 const CalendarText = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <>
       {props.focus === "calendar-dropdown" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Dropdown</h3>
           <p>
             Added Shipments will be shown based on selected dropdown options:
@@ -14,21 +22,21 @@ const CalendarText = (props) => {
         </li>
       )}
       {props.focus === "calendar-add-btn" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Add Button</h3>
           <p>User can enter and add shipment details to manage.</p>
           <p>Once succesfully added, it will show on calendar accordingly.</p>
         </li>
       )}
       {props.focus === "calendar-vessel-btn" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Update Vessel Schedule Button</h3>
           <p>User can update vessel schedule for arrival and departure.</p>
           <p>User can update for each type of shipment mode selected.</p>
         </li>
       )}
       {props.focus === "month-btn" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Month Change Button</h3>
           <p>
             Button will trigger and change month either previous or next month.
@@ -36,7 +44,7 @@ const CalendarText = (props) => {
         </li>
       )}
       {props.focus === "table-date" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Date</h3>
           <p>
             User can go direclty to To Do Page with clicked date as default.
@@ -48,10 +56,11 @@ const CalendarText = (props) => {
         </li>
       )}
       {props.focus === "table-item" && (
-        <li>
+        <li className={ctx.colourMode === "light" ? "font" : "font-dark"}>
           <h3>Shipment</h3>
           <p>
-            User can go directly to a Shipment Modal to view its shipment details.
+            User can go directly to a Shipment Modal to view its shipment
+            details.
           </p>
         </li>
       )}

@@ -16,14 +16,37 @@
 .cs__view {
   border-top-right-radius: 0.5rem;
   border-right: 1px solid;
+  overflow: auto;
+}
+
+.cs__view-dark {
+  border-top-right-radius: 0.5rem;
+  border-right: 1px solid #fff;
+  overflow: auto;
 }
 
 .cs__view__top-bar,
-.cs__desc__top-bar {
+.cs__desc__top-bar,
+.cs__view__top-bar-dark,
+.cs__desc__top-bar-dark {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+  width: 100%;
+  height: 3vh;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.cs__view__top-bar,
+.cs__desc__top-bar {
+  background-color: rgb(135, 135, 135);
+}
+
+.cs__view__top-bar-dark,
+.cs__desc__top-bar-dark {
+  background-color: rgb(76, 76, 76);
 }
 
 .cs__view__top-bar__exit {
@@ -35,7 +58,7 @@
 }
 
 .cs__view__top-bar__back {
-  margin-left: .2rem;
+  margin-left: 0.2rem;
   color: #99ff00;
   background-color: #000;
   border-radius: 50%;
@@ -73,13 +96,10 @@
   overflow: auto;
 }
 
-.cs__view__top-bar,
-.cs__desc__top-bar {
-  width: 100%;
-  height: 3vh;
-  background-color: rgb(135, 135, 135);
+.cs__desc-dark {
   border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-left: 1px solid #fff;
+  overflow: auto;
 }
 
 .cs__desc__text ul {
@@ -103,6 +123,10 @@
 
 .selected {
   background-color: rgba(132, 223, 76, 0.61);
+}
+
+.selected-dark {
+  background-color: rgb(230, 121, 19);
 }
 
 .focus {

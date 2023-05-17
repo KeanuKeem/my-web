@@ -4,6 +4,8 @@
   gap: 2rem;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  padding: 1rem;
 }
 
 .todo-dropdown {
@@ -52,10 +54,11 @@
 }
 
 .todo-lists {
-  margin-top: 2rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  background-color: #fff;
 }
 
 .todo-list {

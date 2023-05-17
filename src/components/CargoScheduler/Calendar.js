@@ -12,7 +12,7 @@ const Calendar = (props) => {
         {props.focus === "calendar-dropdown" ? (
           <div className="focus">
             <div
-              className="dropdown focus"
+              className="dropdown"
               onClick={() => {
                 props.setFocus("calendar-dropdown");
               }}
