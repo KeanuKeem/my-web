@@ -228,6 +228,7 @@
     z-index: 2;
     width: 100%;
     height: 60vh;
+    border-left: 0px solid;
   }
 
   .cs__desc-show {
@@ -282,6 +283,7 @@
     width: 100%;
     height: 55vh;
     overflow: auto;
+    border-left: 0px solid;
   }
 
   .cs__desc-show {
