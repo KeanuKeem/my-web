@@ -225,9 +225,15 @@
     position: absolute;
     top: 4.5vh;
     z-index: 2;
-    background-color: #fff;
     width: 100%;
     height: 60vh;
+  }
+
+  .cs__desc-show {
+    background-color: #fff;
+  }
+  .cs__desc-dark-show {
+    background-color: #000;
   }
 
   .cs__desc__top-bar,
@@ -272,10 +278,16 @@
     position: absolute;
     top: 8vh;
     z-index: 2;
-    background-color: #fff;
     width: 100%;
     height: 55vh;
     overflow: auto;
+  }
+
+  .cs__desc-show {
+    background-color: #fff;
+  }
+  .cs__desc-dark-show {
+    background-color: #000;
   }
 
   .cs__desc__top-bar,
