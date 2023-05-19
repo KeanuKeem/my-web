@@ -114,7 +114,8 @@
   position: relative;
 }
 
-.cs__desc-dark {
+.cs__desc-dark,
+.cs__desc-dark-show {
   border-top-left-radius: 0.5rem;
   border-left: 1px solid #fff;
   overflow: auto;
