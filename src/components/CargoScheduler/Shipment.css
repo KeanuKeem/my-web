@@ -127,3 +127,27 @@
   padding: 0.3rem 1rem;
   height: 2rem;
 }
+
+@media (max-width: 1200px) {
+  .shipment {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .shipment-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .shipment {
+    margin-top: 5rem;
+  }
+  .shipment-top {
+    padding-bottom: .5rem;
+  }
+  .shipment-right {
+    height: 40vh;
+  }
+}

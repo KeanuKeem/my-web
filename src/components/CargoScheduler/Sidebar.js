@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -5,9 +7,13 @@ import {
   faAnglesUp,
 } from "@fortawesome/free-solid-svg-icons";
 
+import ColourContext from "../../store/ColourContext";
+
 import "./Sidebar.css";
 
 const Sidebar = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <div className="sidebar">
       <div
@@ -16,6 +22,9 @@ const Sidebar = (props) => {
         }
         onClick={() => {
           props.setFocus("fav");
+          props.setMobileDescClass(
+            ctx.colourMode === "light" ? "cs__desc-show" : "cs__desc-dark-show"
+          );
         }}
       >
         <p>

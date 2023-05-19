@@ -17,6 +17,11 @@ const CalendarTable = (props) => {
                 className="prev-month focus"
                 onClick={() => {
                   props.setFocus("month-btn");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
                 icon={faCircleChevronLeft}
               />
@@ -25,6 +30,11 @@ const CalendarTable = (props) => {
                 className="prev-month"
                 onClick={() => {
                   props.setFocus("month-btn");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
                 icon={faCircleChevronLeft}
               />
@@ -35,6 +45,11 @@ const CalendarTable = (props) => {
                 className="next-month focus"
                 onClick={() => {
                   props.setFocus("month-btn");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
                 icon={faCircleChevronRight}
               />
@@ -43,6 +58,11 @@ const CalendarTable = (props) => {
                 className="next-month"
                 onClick={() => {
                   props.setFocus("month-btn");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
                 icon={faCircleChevronRight}
               />
@@ -70,6 +90,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               1
@@ -79,6 +104,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               1
@@ -92,6 +122,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               2
@@ -101,6 +136,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               2
@@ -114,6 +154,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               3
@@ -123,6 +168,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               3
@@ -134,6 +184,11 @@ const CalendarTable = (props) => {
                 className="table-item focus"
                 onClick={() => {
                   props.setFocus("table-item");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 {"[FCL] Shipment#"}
@@ -143,6 +198,11 @@ const CalendarTable = (props) => {
                 className="table-item "
                 onClick={() => {
                   props.setFocus("table-item");
+                  props.setMobileDescClass(
+                    props.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 {"[FCL] Shipment#"}
@@ -156,6 +216,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               4
@@ -165,6 +230,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               4
@@ -178,6 +248,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               5
@@ -187,6 +262,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               5
@@ -200,6 +280,11 @@ const CalendarTable = (props) => {
               className="table-date focus"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               6
@@ -209,6 +294,11 @@ const CalendarTable = (props) => {
               className="table-date"
               onClick={() => {
                 props.setFocus("table-date");
+                props.setMobileDescClass(
+                  props.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               6

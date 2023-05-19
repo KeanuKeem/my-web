@@ -1,9 +1,15 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+
+import ColourContext from "../../store/ColourContext";
 
 import "./Shipment.css";
 
 const Shipment = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <div className="shipment">
       <div className="shipment-top">
@@ -14,6 +20,11 @@ const Shipment = (props) => {
             className="shipment-star focus"
             onClick={() => {
               props.setFocus("shipment-star");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           />
         ) : (
@@ -22,6 +33,11 @@ const Shipment = (props) => {
             className="shipment-star"
             onClick={() => {
               props.setFocus("shipment-star");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           />
         )}
@@ -31,6 +47,11 @@ const Shipment = (props) => {
               className="shipment-check focus"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>MBL Surrendered:</p>
@@ -40,6 +61,11 @@ const Shipment = (props) => {
               className="shipment-check focus"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>HBL Surrendered:</p>
@@ -49,6 +75,11 @@ const Shipment = (props) => {
               className="shipment-check focus"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>Shipment on Hold:</p>
@@ -61,6 +92,11 @@ const Shipment = (props) => {
               className="shipment-check"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>MBL Surrendered:</p>
@@ -70,6 +106,11 @@ const Shipment = (props) => {
               className="shipment-check"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>HBL Surrendered:</p>
@@ -79,6 +120,11 @@ const Shipment = (props) => {
               className="shipment-check"
               onClick={() => {
                 props.setFocus("shipment-check");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p>Shipment on Hold:</p>
@@ -92,6 +138,11 @@ const Shipment = (props) => {
               className="shipment-save"
               onClick={() => {
                 props.setFocus("shipment-save");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Save
@@ -102,6 +153,11 @@ const Shipment = (props) => {
             className="shipment-save"
             onClick={() => {
               props.setFocus("shipment-save");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             Save
@@ -122,6 +178,11 @@ const Shipment = (props) => {
             className="shipment-left"
             onClick={() => {
               props.setFocus("shipment-check");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <div className="shipment-dtr">
@@ -142,6 +203,11 @@ const Shipment = (props) => {
               <button
                 onClick={() => {
                   props.setFocus("shipment-add");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 +
@@ -161,6 +227,11 @@ const Shipment = (props) => {
               className="shipment-checklist-add"
               onClick={() => {
                 props.setFocus("shipment-checklist");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <p className="shipment-fak">Shipment#</p>
@@ -170,6 +241,11 @@ const Shipment = (props) => {
               className="shipment-checklist"
               onClick={() => {
                 props.setFocus("shipment-checklist");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <div className="shipment-checklist-left">
@@ -192,6 +268,11 @@ const Shipment = (props) => {
               className="shipment-edit"
               onClick={() => {
                 props.setFocus("shipment-edit");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Edit
@@ -206,6 +287,11 @@ const Shipment = (props) => {
               className="shipment-delete"
               onClick={() => {
                 props.setFocus("shipment-delete");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Delete

@@ -1,9 +1,15 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
+
+import ColourContext from "../../store/ColourContext";
 
 import "./Navbar.css";
 
 const Navbar = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <div className="navbar">
       <div
@@ -12,6 +18,9 @@ const Navbar = (props) => {
         }
         onClick={() => {
           props.setFocus("search");
+          props.setMobileDescClass(
+            ctx.colourMode === "light" ? "cs__desc-show" : "cs__desc-dark-show"
+          );
         }}
       >
         <input type="text" placeholder="Ref#" />
@@ -24,6 +33,11 @@ const Navbar = (props) => {
           className="navbar__profile"
           onClick={() => {
             props.setFocus("profile");
+            props.setMobileDescClass(
+              ctx.colourMode === "light"
+                ? "cs__desc-show"
+                : "cs__desc-dark-show"
+            );
           }}
         >
           <FontAwesomeIcon icon={faUser} />

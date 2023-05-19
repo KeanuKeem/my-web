@@ -1,11 +1,16 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import CalendarTable from "./CalendarTable";
+import ColourContext from "../../store/ColourContext";
 
 import "./Calendar.css";
 
 const Calendar = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <div className="calendar">
       <div className="selector">
@@ -15,6 +20,11 @@ const Calendar = (props) => {
               className="dropdown"
               onClick={() => {
                 props.setFocus("calendar-dropdown");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <h2>All</h2>
@@ -26,6 +36,11 @@ const Calendar = (props) => {
             className="dropdown"
             onClick={() => {
               props.setFocus("calendar-dropdown");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <h2>All</h2>
@@ -38,6 +53,11 @@ const Calendar = (props) => {
               className="dropdown"
               onClick={() => {
                 props.setFocus("calendar-dropdown");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <h2>Type</h2>
@@ -49,6 +69,11 @@ const Calendar = (props) => {
             className="dropdown"
             onClick={() => {
               props.setFocus("calendar-dropdown");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <h2>Type</h2>
@@ -61,6 +86,11 @@ const Calendar = (props) => {
               className="dropdown"
               onClick={() => {
                 props.setFocus("calendar-dropdown");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <h2>May</h2>
@@ -72,6 +102,11 @@ const Calendar = (props) => {
             className="dropdown"
             onClick={() => {
               props.setFocus("calendar-dropdown");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <h2>May</h2>
@@ -84,6 +119,11 @@ const Calendar = (props) => {
               className="dropdown"
               onClick={() => {
                 props.setFocus("calendar-dropdown");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <h2>2023</h2>
@@ -95,6 +135,11 @@ const Calendar = (props) => {
             className="dropdown"
             onClick={() => {
               props.setFocus("calendar-dropdown");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <h2>2023</h2>
@@ -108,6 +153,11 @@ const Calendar = (props) => {
               className="button"
               onClick={() => {
                 props.setFocus("calendar-add-btn");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Add
@@ -118,6 +168,11 @@ const Calendar = (props) => {
             className="button"
             onClick={() => {
               props.setFocus("calendar-add-btn");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             Add
@@ -129,6 +184,11 @@ const Calendar = (props) => {
               className="button"
               onClick={() => {
                 props.setFocus("calendar-vessel-btn");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Vessel Schedule Update
@@ -139,6 +199,11 @@ const Calendar = (props) => {
             className="button"
             onClick={() => {
               props.setFocus("calendar-vessel-btn");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             Vessel Schedule Update
@@ -146,7 +211,12 @@ const Calendar = (props) => {
         )}
       </div>
       <div className="calendar-table">
-        <CalendarTable focus={props.focus} setFocus={props.setFocus} />
+        <CalendarTable
+          focus={props.focus}
+          setFocus={props.setFocus}
+          setMobileDescClass={props.setMobileDescClass}
+          colourMode={ctx.colourMode}
+        />
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
@@ -5,9 +7,13 @@ import {
   faToggleOn,
 } from "@fortawesome/free-solid-svg-icons";
 
+import ColourContext from "../../store/ColourContext";
+
 import "./Todo.css";
 
 const Todo = (props) => {
+  const ctx = useContext(ColourContext);
+
   return (
     <div className="todo">
       <div className="todo-selector">
@@ -17,6 +23,11 @@ const Todo = (props) => {
               className="todo-dropdown"
               onClick={() => {
                 props.setFocus("todo-dropdown");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               <h2>All</h2>
@@ -28,6 +39,11 @@ const Todo = (props) => {
             className="todo-dropdown"
             onClick={() => {
               props.setFocus("todo-dropdown");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             <h2>All</h2>
@@ -42,6 +58,11 @@ const Todo = (props) => {
               className="todo-date"
               onClick={() => {
                 props.setFocus("todo-date");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             />
           </div>
@@ -51,6 +72,11 @@ const Todo = (props) => {
             className="todo-date"
             onClick={() => {
               props.setFocus("todo-date");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           />
         )}
@@ -61,6 +87,11 @@ const Todo = (props) => {
               className="todo-add"
               onClick={() => {
                 props.setFocus("todo-add");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               Add
@@ -71,6 +102,11 @@ const Todo = (props) => {
             className="todo-add"
             onClick={() => {
               props.setFocus("todo-add");
+              props.setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
             }}
           >
             Add
@@ -91,6 +127,11 @@ const Todo = (props) => {
                 icon={faToggleOn}
                 onClick={() => {
                   props.setFocus("todo-toggle");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               />
             ) : (
@@ -98,6 +139,11 @@ const Todo = (props) => {
                 icon={faToggleOff}
                 onClick={() => {
                   props.setFocus("todo-toggle");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               />
             )}
@@ -109,6 +155,11 @@ const Todo = (props) => {
               <p
                 onClick={() => {
                   props.setFocus("todo-shipment");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 {"[FAK] Shipment#"}
@@ -119,6 +170,11 @@ const Todo = (props) => {
               <p
                 onClick={() => {
                   props.setFocus("todo-shipment");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 {"[FAK] (Eg)#"}
@@ -126,6 +182,11 @@ const Todo = (props) => {
               <p
                 onClick={() => {
                   props.setFocus("todo-shipment");
+                  props.setMobileDescClass(
+                    ctx.colourMode === "light"
+                      ? "cs__desc-show"
+                      : "cs__desc-dark-show"
+                  );
                 }}
               >
                 {"[(Eg)#] Shipment#"}
@@ -135,6 +196,11 @@ const Todo = (props) => {
             <p
               onClick={() => {
                 props.setFocus("todo-shipment");
+                props.setMobileDescClass(
+                  ctx.colourMode === "light"
+                    ? "cs__desc-show"
+                    : "cs__desc-dark-show"
+                );
               }}
             >
               {"[FAK] Shipment#"}

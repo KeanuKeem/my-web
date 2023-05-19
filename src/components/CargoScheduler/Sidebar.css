@@ -6,7 +6,7 @@
 }
 
 .sidebar__cont {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .sidebar p {
@@ -19,12 +19,24 @@
   font-size: 1rem;
 }
 
-.sidebar p >:first-child,
-.sidebar p >:last-child {
-  font-size: .75rem;
+.sidebar p > :first-child,
+.sidebar p > :last-child {
+  font-size: 0.75rem;
 }
 
 .sidebar__list p {
-    font-size: .9rem;
-    margin-top: .5rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .sidebar__cont {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 50%;
+  }
 }

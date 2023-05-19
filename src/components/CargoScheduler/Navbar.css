@@ -4,10 +4,10 @@
   height: 8vh;
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 .navbar__search {
-  margin-left: 10rem;
   cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .navbar__profile-cont {
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 
 .navbar__profile,
@@ -55,4 +55,10 @@
 .navbar__profile > *,
 .navbar__profile-focus > * {
   color: #7868e6;
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .navbar {
+    height: 15vh;
+  }
 }

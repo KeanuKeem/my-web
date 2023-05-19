@@ -5,6 +5,7 @@ import {
   faCircleXmark,
   faCircleChevronLeft,
   faHandPointer,
+  faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Navbar from "../components/CargoScheduler/Navbar";
@@ -27,6 +28,9 @@ const CargoScheduler = () => {
   const ctx = useContext(ColourContext);
   const [display, setDisplay] = useState("home");
   const [focus, setFocus] = useState("");
+  const [mobileDescClass, setMobileDescClass] = useState(
+    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+  );
 
   return (
     <div className={ctx.colourMode === "light" ? "cs" : "cs-dark"}>
@@ -57,16 +61,52 @@ const CargoScheduler = () => {
           </div>
         </div>
         <div className="cs__view__content">
-          {display === "navbar" && <Navbar focus={focus} setFocus={setFocus} />}
+          <div
+            className="cs__desc-mob"
+            onClick={() => {
+              setMobileDescClass(
+                ctx.colourMode === "light"
+                  ? "cs__desc-show"
+                  : "cs__desc-dark-show"
+              );
+            }}
+          >
+            <FontAwesomeIcon icon={faEllipsis} />
+          </div>
+          {display === "navbar" && (
+            <Navbar
+              focus={focus}
+              setFocus={setFocus}
+              setMobileDescClass={setMobileDescClass}
+            />
+          )}
           {display === "sidebar" && (
-            <Sidebar focus={focus} setFocus={setFocus} />
+            <Sidebar
+              focus={focus}
+              setFocus={setFocus}
+              setMobileDescClass={setMobileDescClass}
+            />
           )}
           {display === "calendar" && (
-            <Calendar focus={focus} setFocus={setFocus} />
+            <Calendar
+              focus={focus}
+              setFocus={setFocus}
+              setMobileDescClass={setMobileDescClass}
+            />
           )}
-          {display === "todo" && <Todo focus={focus} setFocus={setFocus} />}
+          {display === "todo" && (
+            <Todo
+              focus={focus}
+              setFocus={setFocus}
+              setMobileDescClass={setMobileDescClass}
+            />
+          )}
           {display === "shipment" && (
-            <Shipment focus={focus} setFocus={setFocus} />
+            <Shipment
+              focus={focus}
+              setFocus={setFocus}
+              setMobileDescClass={setMobileDescClass}
+            />
           )}
           {display === "home" && (
             <div className="cs__view-home">
@@ -88,9 +128,7 @@ const CargoScheduler = () => {
           )}
         </div>
       </div>
-      <div
-        className={ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"}
-      >
+      <div className={mobileDescClass}>
         <div
           className={
             ctx.colourMode === "light"
@@ -103,6 +141,9 @@ const CargoScheduler = () => {
             onClick={() => {
               setDisplay("home");
               setFocus("");
+              setMobileDescClass(
+                ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+              );
             }}
             icon={faCircleXmark}
           />
@@ -198,6 +239,9 @@ const CargoScheduler = () => {
                 className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("navbar");
+                  setMobileDescClass(
+                    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+                  );
                 }}
               >
                 Navbar
@@ -206,6 +250,9 @@ const CargoScheduler = () => {
                 className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("sidebar");
+                  setMobileDescClass(
+                    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+                  );
                 }}
               >
                 Sidebar
@@ -214,6 +261,9 @@ const CargoScheduler = () => {
                 className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("calendar");
+                  setMobileDescClass(
+                    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+                  );
                 }}
               >
                 Calendar View
@@ -222,6 +272,9 @@ const CargoScheduler = () => {
                 className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("todo");
+                  setMobileDescClass(
+                    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+                  );
                 }}
               >
                 To Do List View
@@ -230,6 +283,9 @@ const CargoScheduler = () => {
                 className={ctx.colourMode === "light" ? "font" : "font-dark"}
                 onClick={() => {
                   setDisplay("shipment");
+                  setMobileDescClass(
+                    ctx.colourMode === "light" ? "cs__desc" : "cs__desc-dark"
+                  );
                 }}
               >
                 Shipment View
