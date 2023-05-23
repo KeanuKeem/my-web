@@ -166,9 +166,8 @@ const About = () => {
             <ul>
               <li>General Logistics operations</li>
               <li>Website functionality: PHP/MSSQL</li>
-              <li>Onboarding and Outboarding</li>
+              <li>Administration</li>
               <li>Operation Trainer</li>
-              <li>Tech Support: Domain/Network/Phone</li>
             </ul>
           </div>
         )}

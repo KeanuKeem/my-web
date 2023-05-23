@@ -29,46 +29,56 @@ const Mainpage = (props) => {
   const [secondText, setSecondText] = useState("");
   const [secondIndex, setSecondIndex] = useState(0);
   const [secondLineDone, setSecondLineDone] = useState(false);
+  const [skipped, setSkipped] = useState(false);
 
   useEffect(() => {
-    if (firstIndex === firstLine.length && !firstNickName) {
-      setTimeout(() => {
-        setFirstNickName(true);
-      }, 1000);
+    if (!skipped) {
+      if (firstIndex === firstLine.length && !firstNickName) {
+        setTimeout(() => {
+          setFirstNickName(true);
+        }, 1000);
+      }
+      if (firstIndex === 9 && firstNickName) {
+        setTimeout(() => {
+          setFirstActual(true);
+        }, 800);
+      }
+      if (firstIndex < firstLine.length && !firstNickName) {
+        setTimeout(() => {
+          setFirstText(firstText + firstLine[firstIndex]);
+          setFirstIndex(firstIndex + 1);
+        }, 100);
+      }
+      if (firstIndex > 9 && firstNickName) {
+        setTimeout(() => {
+          setFirstText(firstText.substring(0, firstText.length - 1));
+          setFirstIndex(firstIndex - 1);
+        }, 100);
+      }
+      if (firstNameIndex < firstName.length && firstActual) {
+        setTimeout(() => {
+          setFirstText(firstText + firstName[firstNameIndex]);
+          setFirstNameIndex(firstNameIndex + 1);
+        }, 100);
+      }
     }
-    if (firstIndex === 9 && firstNickName) {
-      setTimeout(() => {
-        setFirstActual(true);
-      }, 800);
-    }
-    if (firstIndex < firstLine.length && !firstNickName) {
-      setTimeout(() => {
-        setFirstText(firstText + firstLine[firstIndex]);
-        setFirstIndex(firstIndex + 1);
-      }, 100);
-    }
-    if (firstIndex > 9 && firstNickName) {
-      setTimeout(() => {
-        setFirstText(firstText.substring(0, firstText.length - 1));
-        setFirstIndex(firstIndex - 1);
-      }, 100);
-    }
-    if (firstNameIndex < firstName.length && firstActual) {
-      setTimeout(() => {
-        setFirstText(firstText + firstName[firstNameIndex]);
-        setFirstNameIndex(firstNameIndex + 1);
-      }, 100);
-    }
-  }, [firstText, firstIndex, firstNameIndex, firstNickName, firstActual]);
+  }, [
+    firstText,
+    firstIndex,
+    firstNameIndex,
+    firstNickName,
+    firstActual,
+    skipped,
+  ]);
 
   useEffect(() => {
-    if (secondIndex < secondLine.length && firstLineDone) {
+    if (secondIndex < secondLine.length && firstLineDone && !secondLineDone) {
       setTimeout(() => {
         setSecondText(secondText + secondLine[secondIndex]);
         setSecondIndex(secondIndex + 1);
       }, 100);
     }
-  }, [secondIndex, firstLineDone, secondText]);
+  }, [secondIndex, firstLineDone, secondText, secondLineDone]);
 
   useEffect(() => {
     if (firstText.length === 21 && firstActual) {
@@ -77,51 +87,48 @@ const Mainpage = (props) => {
         setFirstLineDone(true);
       }, 2000);
     }
-  }, [firstText, firstLineDone, firstActual]);
+  }, [firstText, firstActual]);
 
   useEffect(() => {
     if (secondIndex === secondLine.length) {
       setSecondLineDone(true);
-      setSecondText(
-        <>
-          <span className="tag">The </span>
-          <span className="attribute">developer</span>
-          <span>!</span>
-        </>
-      );
     }
   }, [secondIndex]);
 
   useEffect(() => {
-    if (firstActualDone) {
-      setFirstText(
-        <>
-          <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
-            Hi
-          </span>
-          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
-            !{" "}
-          </span>
-          <span
-            className={
-              ctx.colourMode === "light" ? "attribute" : "attribute-dark"
-            }
-          >
-            I am{" "}
-          </span>
-          <span className={ctx.colourMode === "light" ? "value" : "value-dark"}>
-            {"Keonwoo Kim"}
-          </span>
-          <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
-            !
-          </span>
-        </>
-      );
+    if (firstLineDone || skipped) {
+      setTimeout(() => {
+        setFirstText(
+          <>
+            <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
+              Hi
+            </span>
+            <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+              !{" "}
+            </span>
+            <span
+              className={
+                ctx.colourMode === "light" ? "attribute" : "attribute-dark"
+              }
+            >
+              I am{" "}
+            </span>
+            <span
+              className={ctx.colourMode === "light" ? "value" : "value-dark"}
+            >
+              {"Keonwoo Kim"}
+            </span>
+            <span className={ctx.colourMode === "light" ? "font" : "font-dark"}>
+              !
+            </span>
+          </>
+        );
+      }, 100);
     }
-  }, [ctx.colourMode, firstActualDone]);
+  }, [ctx.colourMode, firstLineDone, skipped]);
 
   useEffect(() => {
-    if (secondLineDone) {
+    if (secondLineDone || skipped) {
       setSecondText(
         <>
           <span className={ctx.colourMode === "light" ? "tag" : "tag-dark"}>
@@ -140,10 +147,21 @@ const Mainpage = (props) => {
         </>
       );
     }
-  }, [ctx.colourMode, secondLineDone]);
+  }, [ctx.colourMode, secondLineDone, skipped]);
+
+  const skipHandler = () => {
+    setSkipped(true);
+    setFirstNickName(true);
+    setFirstLineDone(true);
+    setFirstActualDone(true);
+    setSecondLineDone(true);
+  };
 
   return (
-    <div className={ctx.colourMode === "light" ? "main" : "main-dark"}>
+    <div
+      className={ctx.colourMode === "light" ? "main" : "main-dark"}
+      onClick={skipHandler}
+    >
       {props.type !== "About-me" && props.type !== "CargoScheduler" && (
         <div className="main-top">
           <div className="main-top__icon">
